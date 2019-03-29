@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="118dp"
+        app:srcCompat="@drawable/qingxiu"
+        android:id="@+id/imageView5"
+        android:layout_weight="0.79" />
+
+    <TextView
+        android:text="青秀山风景区简介"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="30dp"
+        android:id="@+id/textView" />
+
+    <TextView
+        android:text="青秀山风景区是南宁的国家AAAAA级景区。青秀山是南宁市重点开发的风景区，除保护和修复原有的古迹如董泉、撷青岩崖刻，石香灶等外，还新建了不少景点。
+青秀山风景区包括凤凰岭，凤翼岭和青秀山，海拔高度八十二米至二百八十九米，气候宜人，奇山异卉，四季常开，古诗曰：“青山四时常不老，游子天崖觉春好，我携春色上山来，山花片片迎春开。”在古代，青秀山已经是邕南著名的避暑游览胜地。"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_weight="0.23" />
+
+    <Button
+        android:text="返回"
+        android:layout_width="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_height="wrap_content"
+        android:onClick="buttonback_click"
+        android:id="@+id/buttonback" />
+
+</LinearLayout>

@@ -1,0 +1,87 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "25.0.3"
+
+    sourceSets{
+       main{
+           jniLibs.srcDirs=['libs']
+
+       }
+    }
+
+    useLibrary 'org.apache.http.legacy'
+    packagingOptions{
+        exclude 'META-INF/rxjava.properties'
+        exclude 'META-INF/NOTICE' // will not include NOTICE file
+        exclude 'META-INF/LICENSE' // will not include LICENSE file
+        // as noted by @Vishnuvathsan you may also need to include
+        // variations on the file name. It depends on your dependencies.
+        // Some other common variations on notice and license file names
+        exclude 'META-INF/notice'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/CYAN2d.png'
+        exclude 'META-INF/DEPENDENCIES'
+    }
+
+    defaultConfig {
+        applicationId "com.example.a40769.myapplication123"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86","x86_64","mips","mips64"
+        }
+    }
+    splits {
+
+        // Configures screen ABI split settings
+        abi {
+
+            // Enable ABI APK splits
+            enable true
+
+            // By default all ABIs are included, so use reset() and include to specify that we only
+            // want APKs for x86, armeabi-v7a, and mips
+
+            // Resets the list of ABIs that Gradle should create APKs for to none
+            reset()
+
+            // Specifies a list of ABIs that Gradle should create APKs for
+            //include "armeabi"
+            include 'armeabi-v7a', 'arm64-v8a' //select ABIs to build APKs for
+
+            // Specify that we do not want to also generate a universal APK that includes all ABIs
+            universalApk true
+        }
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:+'
+    compile 'junit:junit:4.12'
+    compile files('libs/httpclient-4.5.6.jar')
+    compile files('libs/httpcore-4.4.10.jar')
+    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
+    compile files('libs/AMap3DMap_6.5.0_AMapSearch_6.5.0_20180930.jar')
+    compile files('libs/smartavengine.jar')
+}

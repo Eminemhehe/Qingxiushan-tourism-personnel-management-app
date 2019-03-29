@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text="     浏览路线:"
+        android:textSize="15dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center|left"
+        android:id="@+id/textView3"/>
+    <com.amap.api.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="370dp"
+        android:layout_weight="0.23"
+        android:layout_marginTop="5dp">
+
+
+    </com.amap.api.maps.MapView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.49"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_below="@+id/map"
+            android:id="@+id/linearLayout"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="44dp"
+                android:layout_height="match_parent"
+                android:id="@+id/tvname"
+                android:gravity="center"
+                android:text="姓名："
+                android:layout_marginLeft="14dp"/>
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:id="@+id/tv_name"
+                android:gravity="center_vertical|left"
+                />
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="match_parent"
+                android:id="@+id/tvold"
+                android:gravity="center"
+                android:text="余额："/>
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:id="@+id/tv_old"
+                android:gravity="center_vertical|left"
+                />
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:id="@+id/tvtype"
+                android:gravity="center"
+                android:text="门票类型："/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tv_type"
+                android:gravity="center_vertical|left"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/linearLayout"
+            android:layout_alignParentStart="true"
+            android:orientation="horizontal"
+            android:id="@+id/linearLayout2"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:id="@+id/tvIDcard"
+                android:gravity="center"
+                android:text="身份证号："
+                android:layout_marginLeft="14dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tv_IDcard"
+                android:gravity="center_vertical|left"
+                android:singleLine="true"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dp">
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:id="@+id/tvtel"
+                android:gravity="center|left"
+                android:text="电     话："
+                />
+
+            <TextView
+                android:layout_width="330dp"
+                android:layout_height="match_parent"
+                android:id="@+id/tv_tel"
+                android:gravity="center_vertical|left"
+                android:singleLine="true"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/linearLayout2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="浏览路线："/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tv_vPlace"
+                android:gravity="center_vertical|left"
+                android:singleLine="true"
+                android:ellipsize="middle"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
+

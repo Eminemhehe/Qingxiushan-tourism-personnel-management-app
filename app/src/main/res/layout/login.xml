@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout          xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1097db"
+    >
+
+
+    <LinearLayout
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginbutton"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:background="#fff"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="44dp"
+            android:background="#fff"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/userId"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:imeOptions="actionDone"
+                android:textSize="16sp"
+                android:ems="10"
+                android:hint="请输入IP地址:"
+
+                >
+            </EditText>
+            <Button
+                android:id="@+id/button_bar"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="1dp"
+                android:inputType="number"
+                />
+
+        </LinearLayout>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:layout_marginLeft="1.0px"
+            android:layout_marginRight="1.0px"
+            android:background="#ffc0c3c4" />
+        <EditText
+            android:id="@+id/pass"
+            android:layout_width="fill_parent"
+            android:layout_height="44.0dip"
+            android:background="#00ffffff"
+            android:gravity="center_vertical"
+
+            android:maxLength="16"
+            android:maxLines="1"
+            android:textColor="#ff1d1d1d"
+            android:textColorHint="#ff666666"
+            android:textSize="16.0sp"
+            android:hint="请输入端口号:"
+            android:inputType="number"
+            />
+    </LinearLayout>
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input"
+        android:layout_marginTop="10dp"
+        android:background="#3aadfd"
+        android:text="登  录"
+        android:textColor="#ffffff"
+        android:textSize="18dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="28dp"
+        android:onClick="loginBtn_click"
+        android:layout_marginRight="28dp"/>
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/loginBtn"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/promptText"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/loginbutton"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:textColor="@android:color/holo_blue_bright"
+        android:text="青秀山人员管理app"
+        android:textSize="27dp"
+        android:layout_centerHorizontal="true"
+        android:accessibilityHeading="false" />
+
+
+</RelativeLayout>

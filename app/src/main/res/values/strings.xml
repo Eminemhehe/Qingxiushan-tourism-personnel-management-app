@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">SmartPublisherSDKDemo</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">登录</string>
+    <string name="action_sign_in_short">登录</string>
+    <string name="error_invalid_email">账号不正确</string>
+    <string name="error_invalid_password">密码过短！</string>
+    <string name="error_incorrect_password">密码不正确！</string>
+    <string name="error_field_required">这一项必须填写！</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+    <string name="aaa">青秀山人员管理app</string>
+    <string name="default_message">"你好，青秀山！"</string>
+    <string name="button_send">"say hello"</string>
+
+    <string name="interact_message">你刚刚已经点击过了按钮！</string>
+
+    <string name="userIdError">账号不能为空！</string>
+    <string name="passError">密码不能为空！</string>
+    <string name="loginSuccess">成功登录 </string>
+    <string name="loginError">登录错误 </string>
+    <string-array name="qingxiu">
+
+        <item>请选择青秀山景点</item>　　　　
+        <item>青秀山相思湖</item>
+
+        　　　　　　
+        <item>青秀山龙象塔</item>
+
+        <item>青秀山桃花岛</item>
+
+        　　　　　　
+        <item>青秀山邀月观阑</item>
+
+        　　　　
+    </string-array>
+
+</resources>
