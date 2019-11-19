@@ -11,7 +11,6 @@
 package com.daniulive.smartplayer;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -22,6 +21,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -55,7 +55,7 @@ import java.util.Date;
 //import android.graphics.YuvImage;
 //import android.graphics.ImageFormat;
 
-public class SmartPlayer extends Activity implements SurfaceHolder.Callback {
+public class SmartPlayer extends AppCompatActivity implements android.view.SurfaceHolder.Callback {
 
     private SurfaceView sSurfaceView = null;
 
@@ -1648,7 +1648,6 @@ public class SmartPlayer extends Activity implements SurfaceHolder.Callback {
 
     private void InitAndSetConfig() {
         playerHandle = libPlayer.SmartPlayerOpen(myContext);
-
         if (playerHandle == 0) {
             Log.e(TAG, "surfaceHandle with nil..");
             return;

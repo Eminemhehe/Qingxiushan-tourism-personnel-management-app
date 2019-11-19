@@ -38,12 +38,12 @@ import java.util.Map;
 public class Location extends AppCompatActivity {
     CameraUpdate cameraUpdate;
     MapView mMapView = null;
-    String data=null;
+    String data = null;
 
     public JSONObject object;
     public JSONObject numob;
     public ListView lv;
-    public ArrayList<Map<String, Object>> list=new ArrayList<Map<String,Object>>();
+    public ArrayList<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
     private Spinner mSpinner;
     private Button mButton;
 
@@ -60,17 +60,17 @@ public class Location extends AppCompatActivity {
         final AMap aMap = mapView.getMap();
 //        LatLng latLng1 = new LatLng(22.789488,108.39972);
 //        final Marker marker1 = aMap.addMarker(new MarkerOptions().position(latLng1).title("青秀山").snippet("桃花岛"));
-        LatLng latLng = new LatLng(22.7870500000,108.3886300000);
+        LatLng latLng = new LatLng(22.7870500000, 108.3886300000);
         final Marker marker = aMap.addMarker(new MarkerOptions().position(latLng).title("青秀山").snippet("青秀山风景区"));
 //        LatLng latLng3 = new LatLng(22.787975,108.391716);
 //        final Marker marker3 = aMap.addMarker(new MarkerOptions().position(latLng3).title("青秀山").snippet("观音寺"));
 //        LatLng latLng4 = new LatLng(22.792139,108.382425);
 //        final Marker marker4 = aMap.addMarker(new MarkerOptions().position(latLng4).title("青秀山").snippet("邀月观阑"));
         marker.showInfoWindow();
-        cameraUpdate= CameraUpdateFactory.newCameraPosition(new CameraPosition(latLng,14,0,30));
+        cameraUpdate = CameraUpdateFactory.newCameraPosition(new CameraPosition(latLng, 14, 0, 30));
         aMap.moveCamera(cameraUpdate);//地图移向指定区域
         ///////////////////////////////////////
-        mSpinner = (Spinner)findViewById(R.id.spinner);
+        mSpinner = (Spinner) findViewById(R.id.spinner);
         mSpinner.setSelection(0, false);
         //使用过时方法
         if (android.os.Build.VERSION.SDK_INT > 9) {
@@ -81,46 +81,40 @@ public class Location extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 //选择列表项的操作
-                final String data = (String)mSpinner.getItemAtPosition(position);//从spinner中获取被选择的数据
+                final String data = (String) mSpinner.getItemAtPosition(position);//从spinner中获取被选择的数据
                 Toast.makeText(Location.this, data, Toast.LENGTH_SHORT).show();
-                init();
+                //init();
                 mButton = (Button) findViewById(R.id.mbutton);
                 mButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if(data.equals("青秀山相思湖")==true )
-                        {
-                            LatLng latLng1 = new LatLng(22.7884710000,108.3884890000);
+                        if (data.equals("青秀山相思湖") == true) {
+                            LatLng latLng1 = new LatLng(22.7884710000, 108.3884890000);
                             final Marker marker1 = aMap.addMarker(new MarkerOptions().position(latLng1).title("青秀山").snippet("相思湖"));
-                            cameraUpdate= CameraUpdateFactory.newCameraPosition(new CameraPosition(latLng1,16,0,30));
+                            cameraUpdate = CameraUpdateFactory.newCameraPosition(new CameraPosition(latLng1, 16, 0, 30));
                             marker1.showInfoWindow();
                             aMap.moveCamera(cameraUpdate);//地图移向指定区域
                             init();
-                        }
-                        else if(data.equals("青秀山龙象塔")==true)//龙象塔
+                        } else if (data.equals("青秀山龙象塔") == true)//龙象塔
                         {
-                            LatLng latLng2 = new LatLng(22.78,108.39);
+                            LatLng latLng2 = new LatLng(22.78, 108.39);
                             final Marker marker2 = aMap.addMarker(new MarkerOptions().position(latLng2).title("青秀山").snippet("龙象塔"));
-                            cameraUpdate= CameraUpdateFactory.newCameraPosition(new CameraPosition(latLng2,16,0,30));
+                            cameraUpdate = CameraUpdateFactory.newCameraPosition(new CameraPosition(latLng2, 16, 0, 30));
                             marker2.showInfoWindow();
                             aMap.moveCamera(cameraUpdate);//地图移向指定区域
                             init();
-                        }
-                        else if(data.equals("青秀山桃花岛")==true)
-                        {
-                            LatLng latLng3 = new LatLng(22.789488,108.39972);
+                        } else if (data.equals("青秀山桃花岛") == true) {
+                            LatLng latLng3 = new LatLng(22.789488, 108.39972);
                             final Marker marker3 = aMap.addMarker(new MarkerOptions().position(latLng3).title("青秀山").snippet("桃花岛"));
                             marker3.showInfoWindow();
-                            cameraUpdate= CameraUpdateFactory.newCameraPosition(new CameraPosition(latLng3,16,0,30));
+                            cameraUpdate = CameraUpdateFactory.newCameraPosition(new CameraPosition(latLng3, 16, 0, 30));
                             aMap.moveCamera(cameraUpdate);//地图移向指定区域
                             init();
-                        }
-                        else if(data.equals("青秀山邀月观阑")==true)
-                        {
-                            LatLng latLng4 = new LatLng(22.792139,108.382425);
+                        } else if (data.equals("青秀山邀月观阑") == true) {
+                            LatLng latLng4 = new LatLng(22.792139, 108.382425);
                             final Marker marker4 = aMap.addMarker(new MarkerOptions().position(latLng4).title("青秀山").snippet("邀月观阑"));
                             marker4.showInfoWindow();
-                            cameraUpdate= CameraUpdateFactory.newCameraPosition(new CameraPosition(latLng4,16,0,30));
+                            cameraUpdate = CameraUpdateFactory.newCameraPosition(new CameraPosition(latLng4, 16, 0, 30));
                             aMap.moveCamera(cameraUpdate);//地图移向指定区域
                             init();
                         }
@@ -128,6 +122,7 @@ public class Location extends AppCompatActivity {
                 });
 
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
@@ -135,7 +130,7 @@ public class Location extends AppCompatActivity {
 
         ////////////////////////////////
 
-       ////////////////划线
+        ////////////////划线
 //        List<LatLng> latLngs = new ArrayList<LatLng>();
 //        latLngs.add(new LatLng(22.789488,108.39972));
 //        latLngs.add(new LatLng(22.78,108.39));
@@ -150,19 +145,16 @@ public class Location extends AppCompatActivity {
             @Override
             public boolean onMarkerClick(Marker marker) {
                 System.out.println(marker.getId());
-                if((marker.getId().toString().equals("Marker6")==true ))//桃花岛
+                if ((marker.getId().toString().equals("Marker6") == true))//桃花岛
                 {
                     System.out.println("aaa");
-                }
-                else if((marker.getId().toString().equals("Marker7")==true ))//龙象塔
+                } else if ((marker.getId().toString().equals("Marker7") == true))//龙象塔
                 {
                     System.out.println("bbb");
-                }
-                else if((marker.getId().toString().equals("Marker8")==true))//观音寺
+                } else if ((marker.getId().toString().equals("Marker8") == true))//观音寺
                 {
                     System.out.println("ccc");
-                }
-                else if((marker.getId().toString().equals("Marker9")==true))//邀月观阑
+                } else if ((marker.getId().toString().equals("Marker9") == true))//邀月观阑
                 {
                     System.out.println("ddd");
                 }
@@ -172,17 +164,25 @@ public class Location extends AppCompatActivity {
 // 绑定 Marker 被点击事件
         aMap.setOnMarkerClickListener(markerClickListener);
     }
+
     private void init() {
         list.clear();
-        lv=(ListView) findViewById(R.id.lv);
+        lv = (ListView) findViewById(R.id.lv);
         new Thread(new Runnable() {
             @Override
             public void run() {
-              String result = HttpUtil.queryStringForPost("http://2i303858f9.imwork.net/Myservlet/A");
-                //String result = HttpUtil.queryStringForPost("http://10.0.2.2:8080/Myservlet/A");
-                //String result= "{\"data:\":[{\"id\":\"1\",\"name\":\"曹想\",\"idCardNum\":\"521532199504280506\",\"telNum\":\"13522265245\",\"ticketCardBalance\":\"54\",\"ticketType\":\"学生\",\"reamrks\":\"1678\",\"visitPlace\":\"青秀山云天阁\",\"visitDate\":\"2018-05-06 17:54:57.0\",\"place1\":\"22.792139,108.382425\",\"place2\":\"22.78,108.39\",\"place3\":\"22.789488,108.39972\"},{\"id\":\"2\",\"name\":\"杨威\",\"idCardNum\":\"436752198605051234\",\"telNum\":\"13905894425\",\"ticketCardBalance\":\"65\",\"ticketType\":\"成人\",\"reamrks\":\"2089\",\"visitPlace\":\"青秀山云天阁\",\"visitDate\":\"2018-05-06 16:54:57.0\",\"place1\":\"22.792139,108.382425\",\"place2\":\"22.78,108.39\",\"place3\":\"22.789488,108.39972\"},{\"id\":\"3\",\"name\":\"杨三\",\"idCardNum\":\"436752200905081569\",\"telNum\":\"13596865526\",\"ticketCardBalance\":\"65\",\"ticketType\":\"儿童\",\"reamrks\":\"5B07\",\"visitPlace\":\"青秀山云天阁\",\"visitDate\":\"2018-05-06 16:54:57.0\",\"place1\":\"22.792139,108.382425\",\"place2\":\"22.78,108.39\",\"place3\":\"22.789488,108.39972\"},{\"id\":\"4\",\"name\":\"张铭\",\"idCardNum\":\"526645198808150586\",\"telNum\":\"15899635869\",\"ticketCardBalance\":\"20\",\"ticketType\":\"成人\",\"reamrks\":\"2994\",\"visitPlace\":\"青秀山云天阁\",\"visitDate\":\"2018-05-06 16:54:57.0\",\"place1\":\"22.792139,108.382425\",\"place2\":\"22.78,108.39\",\"place3\":\"22.789488,108.39972\"},{\"id\":\"5\",\"name\":\"康晓峰\",\"idCardNum\":\"236789199608152222\",\"telNum\":\"13585637489\",\"ticketCardBalance\":\"20\",\"ticketType\":\"学生\",\"reamrks\":\"2095\",\"visitPlace\":\"青秀山云天阁\",\"visitDate\":\"2018-05-06 16:54:57.0\",\"place1\":\"22.792139,108.382425\",\"place2\":\"22.78,108.39\",\"place3\":\"22.789488,108.39972\"},{\"id\":\"6\",\"name\":\"杨明才\",\"idCardNum\":\"522165196911110589\",\"telNum\":\"15923675845\",\"ticketCardBalance\":\"89\",\"ticketType\":\"成人\",\"reamrks\":\"3931\",\"visitPlace\":\"青秀山云天阁\",\"visitDate\":\"2018-05-06 16:54:57.0\",\"place1\":\"22.792139,108.382425\",\"place2\":\"22.78,108.39\",\"place3\":\"22.789488,108.39972\"},{\"id\":\"7\",\"name\":\"张静\",\"idCardNum\":\"463585197909091256\",\"telNum\":\"15869324458\",\"ticketCardBalance\":\"18\",\"ticketType\":\"成人\",\"reamrks\":\"3330\",\"visitPlace\":\"青秀山云天阁\",\"visitDate\":\"2018-05-06 16:54:57.0\",\"place1\":\"22.792139,108.382425\",\"place2\":\"22.78,108.39\",\"place3\":\"22.789488,108.39972\"}]}";
-                jsonJX(result);
-                Log.i("MainActivity",result);
+                String resultstart = HttpUtil.queryStringForPost("http://2i303858f9.imwork.net/BeginInv");
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                String resultData = HttpUtil.queryStringForPost("http://2i303858f9.imwork.net/getAll");
+                //String resultData = HttpUtil.queryStringForPost("http://2i303858f9.imwork.net/Myservlet/A");
+                //String resultData = HttpUtil.queryStringForPost("http://http://127.0.0.1:8080/getAll");
+                //String resultData= "{\"data:\":[{\"id\":\"1\",\"name\":\"曹想\",\"idCardNum\":\"521532199504280506\",\"telNum\":\"13522265245\",\"ticketCardBalance\":\"54\",\"ticketType\":\"学生\",\"reamrks\":\"1678\",\"visitPlace\":\"青秀山云天阁\",\"visitDate\":\"2018-05-06 17:54:57.0\",\"place1\":\"22.792139,108.382425\",\"place2\":\"22.78,108.39\",\"place3\":\"22.789488,108.39972\"},{\"id\":\"2\",\"name\":\"杨威\",\"idCardNum\":\"436752198605051234\",\"telNum\":\"13905894425\",\"ticketCardBalance\":\"65\",\"ticketType\":\"成人\",\"reamrks\":\"2089\",\"visitPlace\":\"青秀山云天阁\",\"visitDate\":\"2018-05-06 16:54:57.0\",\"place1\":\"22.792139,108.382425\",\"place2\":\"22.78,108.39\",\"place3\":\"22.789488,108.39972\"},{\"id\":\"3\",\"name\":\"杨三\",\"idCardNum\":\"436752200905081569\",\"telNum\":\"13596865526\",\"ticketCardBalance\":\"65\",\"ticketType\":\"儿童\",\"reamrks\":\"5B07\",\"visitPlace\":\"青秀山云天阁\",\"visitDate\":\"2018-05-06 16:54:57.0\",\"place1\":\"22.792139,108.382425\",\"place2\":\"22.78,108.39\",\"place3\":\"22.789488,108.39972\"},{\"id\":\"4\",\"name\":\"张铭\",\"idCardNum\":\"526645198808150586\",\"telNum\":\"15899635869\",\"ticketCardBalance\":\"20\",\"ticketType\":\"成人\",\"reamrks\":\"2994\",\"visitPlace\":\"青秀山云天阁\",\"visitDate\":\"2018-05-06 16:54:57.0\",\"place1\":\"22.792139,108.382425\",\"place2\":\"22.78,108.39\",\"place3\":\"22.789488,108.39972\"},{\"id\":\"5\",\"name\":\"康晓峰\",\"idCardNum\":\"236789199608152222\",\"telNum\":\"13585637489\",\"ticketCardBalance\":\"20\",\"ticketType\":\"学生\",\"reamrks\":\"2095\",\"visitPlace\":\"青秀山云天阁\",\"visitDate\":\"2018-05-06 16:54:57.0\",\"place1\":\"22.792139,108.382425\",\"place2\":\"22.78,108.39\",\"place3\":\"22.789488,108.39972\"},{\"id\":\"6\",\"name\":\"杨明才\",\"idCardNum\":\"522165196911110589\",\"telNum\":\"15923675845\",\"ticketCardBalance\":\"89\",\"ticketType\":\"成人\",\"reamrks\":\"3931\",\"visitPlace\":\"青秀山云天阁\",\"visitDate\":\"2018-05-06 16:54:57.0\",\"place1\":\"22.792139,108.382425\",\"place2\":\"22.78,108.39\",\"place3\":\"22.789488,108.39972\"},{\"id\":\"7\",\"name\":\"张静\",\"idCardNum\":\"463585197909091256\",\"telNum\":\"15869324458\",\"ticketCardBalance\":\"18\",\"ticketType\":\"成人\",\"reamrks\":\"3330\",\"visitPlace\":\"青秀山云天阁\",\"visitDate\":\"2018-05-06 16:54:57.0\",\"place1\":\"22.792139,108.382425\",\"place2\":\"22.78,108.39\",\"place3\":\"22.789488,108.39972\"}]}";
+                jsonJX(resultData);
+                Log.i("MainActivity", resultData);
             }
         }).start();
     }
@@ -211,7 +211,7 @@ public class Location extends AppCompatActivity {
                         String ticketType = object.getString("ticketType");
                         String visitPlace = object.getString("visitPlace");
                         String visitDate_1 = object.getString("visitDate");
-                        String visitDate=visitDate_1.substring(0,16);
+                        String visitDate = visitDate_1.substring(0, 16);
                         String place1 = object.getString("place1");
                         String place2 = object.getString("place2");
                         String place3 = object.getString("place3");
@@ -247,7 +247,7 @@ public class Location extends AppCompatActivity {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 1:
-                    Mybaseadapter list_item=new Mybaseadapter();
+                    Mybaseadapter list_item = new Mybaseadapter();
                     lv.setAdapter(list_item);
                     lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
@@ -255,20 +255,20 @@ public class Location extends AppCompatActivity {
                             //Toast.makeText(MainActivity.this,list.get(i).toString(),Toast.LENGTH_LONG).show();
                             //使用bundle传递参数
                             Bundle bundle = new Bundle();
-                            bundle.putString("name",list.get(i).get("name").toString());
-                            bundle.putString("IDcard",list.get(i).get("IDcard").toString());
-                            bundle.putString("telNum",list.get(i).get("telNum").toString());
-                            bundle.putString("ticketCardBalance",list.get(i).get("ticketCardBalance").toString());
-                            bundle.putString("visitDate",list.get(i).get("visitDate").toString());
-                            bundle.putString("ticketType",list.get(i).get("ticketType").toString());
-                            bundle.putString("visitPlace",list.get(i).get("visitPlace").toString());
-                            bundle.putString("place1",list.get(i).get("place1").toString());
-                            bundle.putString("place2",list.get(i).get("place2").toString());
-                            bundle.putString("place3",list.get(i).get("place3").toString());
+                            bundle.putString("name", list.get(i).get("name").toString());
+                            bundle.putString("IDcard", list.get(i).get("IDcard").toString());
+                            bundle.putString("telNum", list.get(i).get("telNum").toString());
+                            bundle.putString("ticketCardBalance", list.get(i).get("ticketCardBalance").toString());
+                            bundle.putString("visitDate", list.get(i).get("visitDate").toString());
+                            bundle.putString("ticketType", list.get(i).get("ticketType").toString());
+                            bundle.putString("visitPlace", list.get(i).get("visitPlace").toString());
+                            bundle.putString("place1", list.get(i).get("place1").toString());
+                            bundle.putString("place2", list.get(i).get("place2").toString());
+                            bundle.putString("place3", list.get(i).get("place3").toString());
                             Intent intent = new Intent();
                             intent.putExtras(bundle);
                             //跳转class页面
-                            intent.setClass(Location.this,detailActivity.class);
+                            intent.setClass(Location.this, detailActivity.class);
                             startActivity(intent);
                         }
                     });
@@ -277,7 +277,7 @@ public class Location extends AppCompatActivity {
         }
     };
 
-    public  class Mybaseadapter extends BaseAdapter {
+    public class Mybaseadapter extends BaseAdapter {
 
         public int getCount() {
             return list.size();
@@ -314,11 +314,13 @@ public class Location extends AppCompatActivity {
             return convertView;
         }
     }
+
     final static class ViewHolder {
         TextView name;
         TextView idCardNumber;
         TextView visitDate;
     }
+
     public void onDestroy() {
         handler.removeCallbacksAndMessages(null);
         super.onDestroy();

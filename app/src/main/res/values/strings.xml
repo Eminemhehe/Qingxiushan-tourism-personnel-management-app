@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SmartPublisherSDKDemo</string>
+    <string name="app_name">SmartPlayerSDKDemo</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
     <string name="action_sign_in">登录</string>
@@ -22,17 +22,11 @@
     <string-array name="qingxiu">
 
         <item>请选择青秀山景点</item>　　　　
-        <item>青秀山相思湖</item>
-
-        　　　　　　
+        <item>青秀山相思湖</item>　　　　　
         <item>青秀山龙象塔</item>
-
-        <item>青秀山桃花岛</item>
-
-        　　　　　　
+        <item>青秀山桃花岛</item>　　　　　
         <item>青秀山邀月观阑</item>
-
-        　　　　
+        　　　
     </string-array>
 
 </resources>
