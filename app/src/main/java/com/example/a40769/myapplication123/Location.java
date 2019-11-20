@@ -172,10 +172,12 @@ public class Location extends AppCompatActivity {
             @Override
             public void run() {
                 String resultstart = HttpUtil.queryStringForPost("http://2i303858f9.imwork.net/BeginInv");
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                if(resultstart!=null){
+                    try {
+                        Thread.sleep(500);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
                 String resultData = HttpUtil.queryStringForPost("http://2i303858f9.imwork.net/getAll");
                 //String resultData = HttpUtil.queryStringForPost("http://2i303858f9.imwork.net/Myservlet/A");
